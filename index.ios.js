@@ -54,11 +54,19 @@ export default class rn extends Component {
           systemIcon="contacts"
           selected={this.state.selectedTab === 'contacts'}
           onPress={() => {
+            
+            // If contacts is already the selected tab, scroll to top
+            if (this.state.selectedTab == 'contacts') {
+              this.secondView.scrollToTop()
+            }
+
             this.setState({
               selectedTab: 'contacts'
           });
         }}>
-        <SecondView/>
+        <SecondView
+        ref={(secondView) => {this.secondView = secondView}}
+        />
         </TabBarIOS.Item>
 
       </TabBarIOS>

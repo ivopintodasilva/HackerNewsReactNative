@@ -21,10 +21,17 @@ var styles = StyleSheet.create({
 
  
 class SecondView extends Component {
+
+    scrollToTop() {
+        this.contactList.scrollToTop()
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <ContactList></ContactList>
+                <ContactList
+                ref={(contactList) => {this.contactList = contactList}}
+                ></ContactList>
             </View>
         );
     }

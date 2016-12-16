@@ -74,9 +74,14 @@ class ContactList extends Component {
         };
     }
 
+    scrollToTop() {
+        this.listView.scrollTo({y:0});
+    }
+
     render() {
         return(
             <ListView
+                ref={(listView) => { this.listView = listView}}
                 dataSource={this.state.dataSource}
                 renderHeader={() => <ContactHeader></ContactHeader>}
                 renderRow={ (rowData) => <ContactRow name={rowData}></ContactRow> }
