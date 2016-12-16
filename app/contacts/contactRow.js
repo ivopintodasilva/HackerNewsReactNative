@@ -9,6 +9,7 @@ import {
   TabBarIOS,
   ListView,
   Image,
+  TouchableHighlight,
 } from 'react-native';
 
 var styles = StyleSheet.create({
@@ -43,14 +44,23 @@ class ContactRow extends Component {
         super(props);
     }
 
+    rowTapped = () => {
+        Alert.alert(this.props.name);
+    }
+
     render() {
         return(
             <View style={styles.list_row}>
-                <View>
-                    <Image source={require('../../img/gongas.jpg')} style={styles.list_image_left}></Image>
-                    <Text style={styles.list_text}>{this.props.name}</Text>
-                    <Image source={require('../../img/gongas.jpg')} style={styles.list_image_right}></Image>                  
-                </View>
+                <TouchableHighlight 
+                underlayColor='#DADADA'
+                onPress={this.rowTapped} 
+                style={styles.list_row}>
+                    <View>
+                        <Image source={require('../../img/gongas.jpg')} style={styles.list_image_left}></Image>
+                        <Text style={styles.list_text}>{this.props.name}</Text>
+                        <Image source={require('../../img/gongas.jpg')} style={styles.list_image_right}></Image>                  
+                    </View>
+                </TouchableHighlight>
             </View>
         );
     };
