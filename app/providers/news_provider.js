@@ -1,6 +1,6 @@
 import { ConstantURL } from '../network/urls.js';
 
-import { BuildNews } from '../data-to-object/buildNews';
+import { BuildNews } from '../data-to-object/build_news';
 
 export var NewsProvider = function() {};
 

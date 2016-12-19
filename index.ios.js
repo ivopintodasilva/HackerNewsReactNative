@@ -14,8 +14,8 @@ import {
   TabBarIOS,
 } from 'react-native';
 
-import { FirstView } from './app/views/firstView.js';
-import SecondView from './app/views/secondView.js';
+import { FirstView } from './app/views/first_view.js';
+import SecondView from './app/views/second_view.js';
 
 export default class rn extends Component {
 

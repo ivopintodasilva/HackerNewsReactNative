@@ -11,8 +11,8 @@ import {
   Image,
 } from 'react-native';
 
-import ContactHeader from './contactHeader.js';
-import ContactRow from './contactRow.js';
+import ContactHeader from './contact_header.js';
+import ContactRow from './contact_row.js';
 
 var styles = StyleSheet.create({
     list_separator: {

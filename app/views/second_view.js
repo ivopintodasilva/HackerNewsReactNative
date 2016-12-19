@@ -11,7 +11,7 @@ import {
   Image,
 } from 'react-native';
 
-import ContactList from '../contacts/contactList.js';
+import ContactList from '../contacts/contact_list.js';
 
 var styles = StyleSheet.create({
     container: {

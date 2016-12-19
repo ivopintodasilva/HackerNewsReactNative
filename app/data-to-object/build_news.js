@@ -1,5 +1,5 @@
 import { News } from '../business_logic/news.js';
-import { BuildArticle } from './buildArticle.js';
+import { BuildArticle } from './build_article.js';
 
 export var BuildNews = function (data) {
 
