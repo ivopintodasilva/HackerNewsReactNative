@@ -1,15 +1,17 @@
 import Article from './article.js';
 
-export var News = function (news_source) {
+export class News {
 
-    this.source = news_source;
-    var articles = [];
+    constructor(newsSource) {
+        this.source = newsSource;
+        this.articles = [];
+    }
 
-    this.addArticle = function (article) {
-        articles.push(article);
+    addArticle = function (article) {
+        this.articles.push(article);
     };
 
-    this.getArticles = function () {
-        return articles;
+    getArticles = function () {
+        return this.articles;
     };
 };

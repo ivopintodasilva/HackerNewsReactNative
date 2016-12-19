@@ -18,7 +18,7 @@ import { News } from '../business_logic/news.js';
 
 import NewsRow from '../news/news_row.js';
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
     list_separator: {
         height: StyleSheet.hairlineWidth,
         backgroundColor: '#8E8E8E',
@@ -31,46 +31,46 @@ var styles = StyleSheet.create({
 });
 
 class NewsList extends Component {
-    ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     constructor(props) {
         super(props);
 
+        this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        // console.log(this.ds);
         this.state = {
             loading: true,
             refreshing: false,
-            dataSource: this.ds.cloneWithRows([]),
+            dataSource: this.ds.cloneWithRows([])
         };
     }
 
+    _completion(data) {
+        if (data instanceof News === true) {
+            console.log(this.ds);
+
+            this.setState({
+                'loading': false,
+                'refreshing': false,
+                'dataSource': this.ds.cloneWithRows(data.getArticles())
+            });
+
+            console.log(data.source);
+            console.log(data.getArticles());
+
+        } else {
+
+            this.setState({
+                'loading': false,
+                'refreshing': false,
+                'dataSource': this.ds.cloneWithRows([])
+            });
+
+            console.log("Not an instance of news");
+        }
+    }
+
     componentDidMount() {
-
-        var completion = function (data) {
-            if (data instanceof News === true) {
-
-                this.setState({
-                    'loading': false,
-                    'refreshing': false,
-                    'dataSource': this.ds.cloneWithRows(data.getArticles())
-                });
-
-                console.log(data.source);
-                console.log(data.getArticles());
-
-            } else {
-
-                this.setState({
-                    'loading': false,
-                    'refreshing': false,
-                    'dataSource': this.ds.cloneWithRows([])
-                });
-
-                console.log("Not an instance of news");
-            }
-        }.bind(this);
-
-        NewsProvider.fetchNews(completion);
-
+        NewsProvider.fetchNews((data) => this._completion(data));
     }
 
     render() {
