@@ -9,4 +9,6 @@ it('renders correctly', () => {
   const tree = renderer.create(
     <Index />
   );
+
+  expect(2).toBe(0);
 });

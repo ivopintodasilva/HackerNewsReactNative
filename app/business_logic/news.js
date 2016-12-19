@@ -1,12 +1,12 @@
 import Article from './article.js';
 
-var News = function (news_source) {
+export var News = function (news_source) {
 
     this.source = news_source;
     var articles = [];
 
     this.addArticle = function (article) {
-        articles += article;
+        articles.push(article);
     };
 
     this.getArticles = function () {

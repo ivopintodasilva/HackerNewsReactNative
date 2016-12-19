@@ -1,4 +1,4 @@
-var Article = function (article_author, article_title, article_description, article_url, article_imageUrl, article_publishedAt) {
+export var Article = function (article_author, article_title, article_description, article_url, article_imageUrl, article_publishedAt) {
     
     this.author = article_author;
     this.title = article_title;
@@ -7,4 +7,4 @@ var Article = function (article_author, article_title, article_description, arti
     this.imageUrl = article_imageUrl;
     this.publishedAt = article_publishedAt;
 
-}
+};

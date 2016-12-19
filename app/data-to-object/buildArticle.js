@@ -1,6 +1,6 @@
-import Article from '../business_logic/article.js';
+import { Article } from '../business_logic/article.js';
 
-var buildArticle = function (data) {
+export var BuildArticle = function (data) {
     var article = new Article(data.author, 
                               data.title, 
                               data.description, 

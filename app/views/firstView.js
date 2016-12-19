@@ -9,7 +9,13 @@ import {
   TabBarIOS,
 } from 'react-native';
 
+import 'whatwg-fetch'
+
 import { Blink } from '../components/blink.js';
+
+import { NewsProvider } from '../providers/news_provider.js';
+
+import { News } from '../business_logic/news.js';
 
 var styles = StyleSheet.create({
   container: {
@@ -26,7 +32,18 @@ var styles = StyleSheet.create({
 export class FirstView extends Component {
 
     onPress = () => {
-        Alert.alert("omg");
+
+        var completion = function (data) {
+
+            if (data instanceof News === true) {
+                console.log(data.source);
+                console.log(data.getArticles());
+            } else {
+                console.log("Not an instance of news");
+            }
+        }
+
+        NewsProvider.fetchNews(completion);
     }
 
     render() {
