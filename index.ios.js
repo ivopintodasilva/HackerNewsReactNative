@@ -33,9 +33,9 @@ export default class rn extends Component {
 
       <TabBarIOS 
         selectedTab={this.state.selectedTab}
-        unselectedTintColor="yellow"
+        unselectedTintColor="#929292"
         tintColor="white"
-        barTintColor="darkslateblue">
+        barTintColor="#FF6600">
 
         <TabBarIOS.Item
           title="Downloads"

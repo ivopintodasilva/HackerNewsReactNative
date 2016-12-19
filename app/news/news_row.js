@@ -14,22 +14,22 @@ import {
 
 var styles = {
     row: {
-        'height': 100,
-        'backgroundColor': '#F6F5F0',
+        height: 100,
+        backgroundColor: '#F6F5F0',
     },
     row_content: {
-        'height': 100,
-        'marginLeft': 20,
-        'marginRight': 20,
-        'alignItems': 'center',
-        'justifyContent': 'center',
+        height: 100,
+        marginLeft: 20,
+        marginRight: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     title: {
-        'fontFamily': 'Avenir',
-        'fontSize': 16,
-        'fontWeight': '700',
-        'textAlign': 'center',
-        'color': '#2F2F2F',
+        fontFamily: 'Avenir',
+        fontSize: 16,
+        fontWeight: '700',
+        textAlign: 'center',
+        color: '#2F2F2F',
     },
 };
 
