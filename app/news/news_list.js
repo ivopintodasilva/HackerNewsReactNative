@@ -90,7 +90,11 @@ class NewsList extends Component {
                     enableEmptySections={true}
                     ref={(listView) => { this.listView = listView}}
                     dataSource={this.state.dataSource}
-                    renderRow={ (rowData) => <NewsRow article={rowData}></NewsRow> }
+                    renderRow={ (rowData) => <NewsRow 
+                        navigateTo={this.props.navigateTo}
+                        article={rowData}>
+                        </NewsRow> 
+                    }
                     renderSeparator={ (sectionId, rowId) => <View key={rowId} style={styles.list_separator}/> }
                 />
             );

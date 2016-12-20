@@ -29,9 +29,14 @@ export default class rn extends Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
-        <FirstView/>
-      </View>
+      <NavigatorIOS
+      style={{flex: 1}}
+      initialRoute={{
+        title: "Top Stories",
+        navigationBarHidden: true,
+        component: FirstView
+      }}/>
+
     );
   }
 }

@@ -12,6 +12,8 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import { Reader } from '../views/reader.js'
+
 var styles = {
     row: {
         flex: 1,
@@ -51,8 +53,19 @@ var styles = {
 };
 
 class NewsRow extends Component {
+    
+    // When a row is tapped, navigate to the story
     rowTapped = () => {
-        Alert.alert(this.props.article.url);
+
+        const nextRoute = {
+            component: Reader,
+            title: this.props.article.title,
+            passProps: { 
+                url: this.props.article.url 
+            }
+        };
+
+        this.props.navigateTo(nextRoute);
     }
 
     render() {

@@ -7,6 +7,7 @@ import {
   Button,
   Alert,
   TabBarIOS,
+  NavigatorIOS,
 } from 'react-native';
 
 import NewsList from '../news/news_list.js';
@@ -22,11 +23,17 @@ var styles = StyleSheet.create({
 
 export class FirstView extends Component {
 
+    navigateTo(route) {
+        this.props.navigator.push(route);
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 <NewsHeader></NewsHeader>
-                <NewsList></NewsList>
+                <NewsList
+                navigateTo={(component) => {this.navigateTo(component);}}
+                ></NewsList>
             </View>
         );
     }
