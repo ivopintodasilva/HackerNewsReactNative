@@ -16,22 +16,37 @@ var styles = StyleSheet.create({
         height: 100,
         backgroundColor: '#FF6600',
     },
-    header_text: {
-        flex: 1,
+    content: {
+        flex: 1, 
+        top: 40,
+    },
+    header_title: {
         fontFamily: 'Avenir',
         fontSize: 20,
         fontWeight: '800',
         color: '#FFFFFF',
         textAlign: 'center',
-        marginTop: 50
+        bottom: 0,
     },
+    header_subtitle: {
+        fontFamily: 'Avenir',
+        fontSize: 12,
+        fontWeight: '300',
+        color: '#FFFFFF',
+        textAlign: 'center',
+        bottom: 0,
+    },
+
 });
 
 class NewsHeader extends Component {
     render() {
         return(
             <View style={styles.header}>
-                <Text style={styles.header_text}>Hacker News</Text>
+                <View style={styles.content}>
+                    <Text style={styles.header_title}>Hacker News</Text>
+                    <Text style={styles.header_subtitle}>TOP STORIES</Text>
+                </View>
             </View>
         );
     };
