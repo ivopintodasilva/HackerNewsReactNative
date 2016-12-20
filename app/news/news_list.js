@@ -10,6 +10,7 @@ import {
   ListView,
   Image,
   ActivityIndicator,
+  Animated
 } from 'react-native';
 
 import { NewsProvider } from '../providers/news_provider.js';
@@ -44,6 +45,11 @@ class NewsList extends Component {
             refreshing: false,
             dataSource: this.ds.cloneWithRows([])
         };
+    }
+
+    // Detect the did scroll event and propagate to the parent
+    _didScroll(event) {
+        this.props.didScroll(event.nativeEvent.contentOffset.y);
     }
 
     // Update the list
@@ -86,10 +92,12 @@ class NewsList extends Component {
             return(
                 <ListView
                     automaticallyAdjustContentInsets={false}
-                    contentInset={{top:0, bottom: 0}}
+                    contentInset={{top:100, bottom: 0}}
                     enableEmptySections={true}
                     ref={(listView) => { this.listView = listView}}
                     dataSource={this.state.dataSource}
+                    onScroll={(event) => {this._didScroll(event)}}
+                    scrollEventThrottle={1}
                     renderRow={ (rowData) => <NewsRow 
                         navigateTo={this.props.navigateTo}
                         article={rowData}>
