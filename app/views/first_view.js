@@ -41,6 +41,9 @@ export class FirstView extends Component {
     didScroll(contentOffsetY) {
 
         if (contentOffsetY >= 0) {
+            this.setState({
+                headerHeight: HEADER_MIN_HEIGHT,
+            });
             return;
         }
 
