@@ -1,5 +1,4 @@
 import { ConstantURL } from '../network/urls.js';
-
 import { BuildNews } from '../data-to-object/build_news.js';
 import { BuildArticle } from '../data-to-object/build_article.js';
 
