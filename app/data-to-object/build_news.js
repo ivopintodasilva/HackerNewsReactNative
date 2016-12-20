@@ -1,11 +1,11 @@
 import { News } from '../business_logic/news.js';
 import { BuildArticle } from './build_article.js';
 
-export var BuildNews = function (data) {
+export var BuildNews = function (source, articles) {
 
-    var news = new News(data.source);
+    var news = new News(source);
 
-    data.articles.forEach(function (articleData) {
+    articles.forEach(function (articleData) {
         var article = BuildArticle(articleData);
         news.addArticle(article);
     });

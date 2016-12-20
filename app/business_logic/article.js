@@ -1,10 +1,17 @@
-export var Article = function (article_author, article_title, article_description, article_url, article_imageUrl, article_publishedAt) {
-    
-    this.author = article_author;
-    this.title = article_title;
-    this.description = article_description;
+export var Article = function (article_id, 
+                               article_by, 
+                               article_title, 
+                               article_descendants, 
+                               article_kids, 
+                               article_score, 
+                               article_type, 
+                               article_url) {
+    this.id = article_id;
+    this.by = article_by;
+    this.title = article_title;    
+    this.descendants = article_descendants;
+    this.kids = article_kids;
+    this.score = article_score;
+    this.type = article_type;
     this.url = article_url;
-    this.imageUrl = article_imageUrl;
-    this.publishedAt = article_publishedAt;
-
 };

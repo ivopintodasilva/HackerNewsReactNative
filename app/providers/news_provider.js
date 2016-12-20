@@ -1,16 +1,24 @@
 import { ConstantURL } from '../network/urls.js';
 
-import { BuildNews } from '../data-to-object/build_news';
+import { BuildNews } from '../data-to-object/build_news.js';
+import { BuildArticle } from '../data-to-object/build_article.js';
 
 export var NewsProvider = function() {};
 
-NewsProvider.fetchNews = function(completion) {
-
-    return fetch(ConstantURL.HackerNews)
-        .then(function(response) {
+NewsProvider.fetchItem = function(item, completion) {
+    return fetch(ConstantURL.GetItem + item.toString() + '.json')
+        .then(function (response) {
             return response.json();
-        }).then(function(json) {
-            completion(new BuildNews(json));
+        }).then(function (json){
+            completion(new BuildArticle(json));
         });
+};
 
+NewsProvider.fetchTopStories = function(completion) {
+    return fetch(ConstantURL.TopStories)
+        .then(function (response) {
+            return response.json();
+        }).then(function (json) {
+            completion(json);
+        });
 };

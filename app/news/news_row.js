@@ -19,27 +19,18 @@ var styles = {
     },
     row_content: {
         height: 100,
-        marginLeft: 20,
-        marginRight: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
+        margin: 10,
     },
     title: {
         fontFamily: 'Avenir',
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: '700',
-        textAlign: 'center',
-        color: '#2F2F2F',
+        textAlign: 'left',
+        color: '#5F5F5F',
     },
 };
 
 class NewsRow extends Component {
-    constructor(props) {
-        super(props);
-
-        console.log(this.props.article.description);
-    }
-
     rowTapped = () => {
         Alert.alert(this.props.article.title);
     }

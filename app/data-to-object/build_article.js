@@ -1,12 +1,14 @@
 import { Article } from '../business_logic/article.js';
 
 export var BuildArticle = function (data) {
-    var article = new Article(data.author, 
+    var article = new Article(data.id, 
+                              data.by, 
                               data.title, 
-                              data.description, 
-                              data.url, 
-                              data.imageUrl, 
-                              data.publishedAt);
+                              data.descendants, 
+                              data.kids, 
+                              data.score, 
+                              data.type, 
+                              data.url);
 
     return article;
 }
