@@ -7,10 +7,12 @@ import {
   Button,
   Alert,
   TabBarIOS,
+  WebView,
 } from 'react-native';
 
 let styles = StyleSheet.create({
     container: {
+        flex: 1,
         backgroundColor: "#000000",
     },
 });
@@ -18,7 +20,10 @@ let styles = StyleSheet.create({
 export class Reader extends Component {
     render() {
         return(
-            <View style={styles.container}/>
+            <WebView
+                source={{uri: this.props.url}}
+                style={styles.container}
+            />
         );
     }
 }
