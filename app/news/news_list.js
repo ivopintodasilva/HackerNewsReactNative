@@ -93,6 +93,7 @@ class NewsList extends Component {
                 <ListView
                     automaticallyAdjustContentInsets={false}
                     contentInset={{top:100, bottom: 0}}
+                    contentOffset={{x:0, y: -100}}
                     enableEmptySections={true}
                     ref={(listView) => { this.listView = listView}}
                     dataSource={this.state.dataSource}
