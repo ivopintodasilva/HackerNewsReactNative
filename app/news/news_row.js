@@ -10,6 +10,8 @@ import {
   ListView,
   Image,
   TouchableHighlight,
+  ActionSheetIOS,
+  Share,
 } from 'react-native';
 
 import { Reader } from '../views/reader.js'
@@ -53,6 +55,18 @@ var styles = {
 };
 
 class NewsRow extends Component {
+
+    // Add share action
+    showShareActionSheet = () => {
+        
+        Share.share({
+            message: this.props.article.title,
+            url: this.props.article.url,
+            title: 'Hacker News Top Stories'
+        }, {})
+        .then(this._showResult)
+        .catch((error) => this.setState({result: 'error: ' + error.message}));    
+    }
     
     // When a row is tapped, navigate to the story
     rowTapped = () => {
@@ -60,6 +74,8 @@ class NewsRow extends Component {
         const nextRoute = {
             component: Reader,
             title: this.props.article.title,
+            rightButtonTitle: "Share",
+            onRightButtonPress: this.showShareActionSheet,
             passProps: { 
                 url: this.props.article.url 
             }

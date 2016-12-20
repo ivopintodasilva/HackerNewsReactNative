@@ -8,7 +8,9 @@ import {
   Alert,
   TabBarIOS,
   WebView,
-  ActivityIndicator
+  ActivityIndicator,
+  ActionSheetIOS,
+  UIManager
 } from 'react-native';
 
 let styles = StyleSheet.create({
@@ -21,6 +23,7 @@ let styles = StyleSheet.create({
     },
     container: {
         flex: 1,
+        backgroundColor: '#F6F5F0',
     },
 });
 
@@ -51,7 +54,7 @@ export class Reader extends Component {
         switch (this.state.loading) {
             case false:
                 return(
-                    <View style={{flex: 1}}>
+                    <View style={styles.container}>
                         <WebView
                         onLoadStart={this.loadStarted}
                         onLoadEnd={this.loadEnded}
@@ -62,7 +65,7 @@ export class Reader extends Component {
                 );
             case true:
                 return(
-                    <View style={{flex: 1}}>
+                    <View style={styles.container}>
                         <WebView
                         onLoadStart={this.loadStarted}
                         onLoadEnd={this.loadEnded}

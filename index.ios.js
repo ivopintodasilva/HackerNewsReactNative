@@ -31,6 +31,8 @@ export default class rn extends Component {
     return (
       <NavigatorIOS
       style={{flex: 1}}
+      tintColor='#ff6600'
+      titleTextColor='#5F5F5F'
       initialRoute={{
         title: "Top Stories",
         navigationBarHidden: true,
