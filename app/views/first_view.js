@@ -10,9 +10,8 @@ import {
   NavigatorIOS,
 } from 'react-native';
 
-import NewsList from '../news/news_list.js';
-
-import NewsHeader from '../news/news_header.js';
+import NewsList from '../components/news/news_list.js';
+import NewsHeader from '../components/news/news_header.js';
 
 const HEADER_MAX_HEIGHT = 100;
 const HEADER_MIN_HEIGHT = 20;
@@ -52,7 +51,7 @@ export class FirstView extends Component {
         if (height > HEADER_MAX_HEIGHT) {
             height = HEADER_MAX_HEIGHT;
         } else if (height < HEADER_MIN_HEIGHT) {
-            height = HEADER_MIN_HEIGHT;            
+            height = HEADER_MIN_HEIGHT;
         }
 
         this.setState({

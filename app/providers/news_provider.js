@@ -1,6 +1,6 @@
 import { ConstantURL } from '../network/urls.js';
-import { BuildNews } from '../data-to-object/build_news.js';
-import { BuildArticle } from '../data-to-object/build_article.js';
+import { BuildNews } from '../serializers/build_news.js';
+import { BuildArticle } from '../serializers/build_article.js';
 
 export var NewsProvider = function() {};
 

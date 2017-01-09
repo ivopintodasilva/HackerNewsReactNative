@@ -16,16 +16,15 @@ import {
 } from 'react-native';
 
 import { FirstView } from './app/views/first_view.js';
-import SecondView from './app/views/second_view.js';
 
 export default class rn extends Component {
 
   constructor(props) {
     super(props);
-    
+
     StatusBar.setBarStyle('light-content', true);
   }
-   
+
 
   render() {
     return (

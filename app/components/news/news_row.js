@@ -14,7 +14,7 @@ import {
   Share,
 } from 'react-native';
 
-import { Reader } from '../views/reader.js'
+import { Reader } from '../../views/reader.js'
 
 var styles = {
     row: {
@@ -58,16 +58,16 @@ class NewsRow extends Component {
 
     // Add share action
     showShareActionSheet = () => {
-        
+
         Share.share({
             message: this.props.article.title,
             url: this.props.article.url,
             title: 'Hacker News Top Stories'
         }, {})
         .then(this._showResult)
-        .catch((error) => this.setState({result: 'error: ' + error.message}));    
+        .catch((error) => this.setState({result: 'error: ' + error.message}));
     }
-    
+
     // When a row is tapped, navigate to the story
     rowTapped = () => {
 
@@ -76,8 +76,8 @@ class NewsRow extends Component {
             title: this.props.article.title,
             rightButtonTitle: "Share",
             onRightButtonPress: this.showShareActionSheet,
-            passProps: { 
-                url: this.props.article.url 
+            passProps: {
+                url: this.props.article.url
             }
         };
 
@@ -87,7 +87,7 @@ class NewsRow extends Component {
     render() {
         return(
             <View style={styles.row}>
-                <TouchableHighlight 
+                <TouchableHighlight
                 underlayColor='#DADADA'
                 onPress={this.rowTapped}>
                     <View style={styles.row_content}>

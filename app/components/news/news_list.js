@@ -13,10 +13,10 @@ import {
   Animated
 } from 'react-native';
 
-import { NewsProvider } from '../providers/news_provider.js';
-import { News } from '../business_logic/news.js';
-import NewsRow from '../news/news_row.js';
-import { BuildNews } from '../data-to-object/build_news.js';
+import { NewsProvider } from '../../providers/news_provider.js';
+import { News } from '../../models/news.js';
+import NewsRow from './news_row.js';
+import { BuildNews } from '../../serializers/build_news.js';
 
 const styles = StyleSheet.create({
     list_separator: {
@@ -99,10 +99,10 @@ class NewsList extends Component {
                     dataSource={this.state.dataSource}
                     onScroll={(event) => {this._didScroll(event)}}
                     scrollEventThrottle={1}
-                    renderRow={ (rowData) => <NewsRow 
+                    renderRow={ (rowData) => <NewsRow
                         navigateTo={this.props.navigateTo}
                         article={rowData}>
-                        </NewsRow> 
+                        </NewsRow>
                     }
                     renderSeparator={ (sectionId, rowId) => <View key={rowId} style={styles.list_separator}/> }
                 />

@@ -1,4 +1,4 @@
-import { News } from '../business_logic/news.js';
+import { News } from '../models/news.js';
 import { BuildArticle } from './build_article.js';
 
 export var BuildNews = function (source, articles) {
